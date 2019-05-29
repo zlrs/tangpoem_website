@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form %} <!-- Note: pip install bootstrap_flask -->
+
+{% block content %}
+<div class="container">
+    <div class="search-form">
+        {{ render_form(form, action=request.full_path, extra_classes="") }}
+    </div>
+
+    <div class="search-result">
+        <p class="text-secondary">我搜索到了{{ poetries | length }}首{{ poet }}的诗歌</p>
+    </div>
+    <div class="list-group">
+        {% for poetry in poetries %}
+            <a class="list-group-item list-group-item-action flex-column">
+                <div class="poetry-title d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-primary">{{ poetry.title }} <small>{{ poet }}</small></h5>
+                </div>
+                <div class="poetry-content">
+                    <p>{{ poetry.content }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

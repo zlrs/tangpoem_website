@@ -1,0 +1,9 @@
+import os
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_DATABASE_URI = os.getenv('FLASK_DATABASE_URI', None)
+if SQLALCHEMY_DATABASE_URI is None:
+    print("SQLALCHEMY配置出错，是否忘记设置`FLASK_DATABASE_URI`环境变量？")
+
+# WTF_CSRF_ENABLED=False
+SECRET_KEY = os.getenv('SECRET_KEY', 'secret string')

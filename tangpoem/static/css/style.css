@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(245, 245, 245) !important;
+}
+
+p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.container {
+    max-width: 860px !important;
+}
+
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-result {
+    margin: 20px 20px 20px 0;
+}
+
+header {
+    margin: 50px 0 40px 0;
+}
+
+/*a {*/
+/*    text-decoration: none !important;*/
+/*}*/
+
+footer {
+    margin: 20px;
+}
