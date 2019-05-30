@@ -4,7 +4,7 @@
 ## checkout submodule
 本项目使用git子模块(git submodule)引用sql数据。为了获取数据，首先需要初始化子模块。初始化子模块有几种方法。
 
-1. 通过Github Desktop 克隆项目的，这会自动进行子模块的初始化。
+1. 通过Github Desktop 克隆项目，这会自动进行子模块的初始化。
 
 2. 克隆项目时加上`--recurse-submodules`参数：`git clone <repo> --recurse-submodules`
 
@@ -23,6 +23,9 @@ git submodule update
 有可能会提示python版本不符，可以手动指定python版本或安装路径
 - `pipenv install --python 3.7`
 - `pipenv --python path\to\python`
+
+## 导入唐诗数据
+`mysql -u root -p database < data/tang_poetry.sql`
 
 ## 设置数据库URI
 ```
