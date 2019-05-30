@@ -7,8 +7,10 @@ from sqlalchemy import text  # todo: 看着text函数定义
 def build_db():
     """
     Create database and execute sql after drop.
+    Note: This command may fail due to imappropriate models defination. Using 
+    `mysql -u root -p <db> < data/tang.sql` to create tables is most recommanded.
     """
-    click.confirm('This operation will delete the database, do you want to continue?', abort=True)
+    click.confirm('This operation will drop existing tables and data, do you want to continue?', abort=True)
     db.drop_all()
     click.echo('Dropped tables.')
 

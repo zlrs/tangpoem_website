@@ -11,7 +11,7 @@ app.jinja_env.lstrip_blocks = True
 
 db = SQLAlchemy(app)
 
-from . import views, models
+from . import views, models, commands
 
 
 @app.shell_context_processor
